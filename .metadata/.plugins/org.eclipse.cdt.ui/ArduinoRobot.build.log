@@ -1,0 +1,42 @@
+09:15:40 **** Incremental Build of configuration Release for project ArduinoRobot ****
+make all 
+Building file: ../ArduinoRobot.cpp
+Invoking: AVR C++ Compiler
+avr-g++ -I"D:\Arduino\hardware\arduino\cores\arduino" -I"D:\Arduino\hardware\arduino\variants\standard" -I"C:\Users\Ulrik1\workspace\ArduinoRobot" -I"D:\Arduino\libraries\NewPing" -D__IN_ECLIPSE__=1 -DUSB_VID= -DUSB_PID= -DARDUINO=106 -Wall -Os -ffunction-sections -fdata-sections -fno-exceptions -g -mmcu=atmega328p -DF_CPU=16000000UL -MMD -MP -MF"ArduinoRobot.d" -MT"ArduinoRobot.d"  -c -o "ArduinoRobot.o" -x c++ "../ArduinoRobot.cpp"
+Finished building: ../ArduinoRobot.cpp
+ 
+Building target: ArduinoRobot.elf
+Invoking: AVR C++ Linker
+avr-gcc -Os -Wl,--gc-sections  -L"C:\Users\Ulrik1\workspace\Arduino_Uno/Release" -mmcu=atmega328p  -o"ArduinoRobot.elf"  ./NewPing/NewPing.o  ./ArduinoRobot.o   -l"Arduino_Uno" -lm
+Finished building target: ArduinoRobot.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S ArduinoRobot.elf  >"ArduinoRobot.lss"
+Finished building: ArduinoRobot.lss
+ 
+Create Flash image (ihex format)
+avr-objcopy -R .eeprom -O ihex ArduinoRobot.elf  "ArduinoRobot.hex"
+Finished building: ArduinoRobot.hex
+ 
+Create eeprom image (ihex format)
+avr-objcopy -j .eeprom --no-change-warnings --change-section-lma .eeprom=0 -O ihex ArduinoRobot.elf  "ArduinoRobot.eep"
+Finished building: ArduinoRobot.eep
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega328p ArduinoRobot.elf
+AVR Memory Usage
+----------------
+Device: atmega328p
+
+Program:    4756 bytes (14.5% Full)
+(.text + .data + .bootloader)
+
+Data:        390 bytes (19.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+09:15:40 Build Finished (took 772ms)
+
